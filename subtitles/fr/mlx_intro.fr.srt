@@ -1,0 +1,507 @@
+1
+00:00:05,860 --> 00:00:08,391
+Bonjour et bienvenue dans cette petite vidéo
+
+2
+00:00:08,411 --> 00:00:11,341
+d'introduction à la MLX : la MinilibX !
+
+3
+00:00:11,359 --> 00:00:13,469
+Alors la MinilibX qu'est ce que c'est ?
+
+4
+00:00:13,469 --> 00:00:15,319
+Tout simplement une petite librairie
+
+5
+00:00:15,319 --> 00:00:17,299
+faite maison, qui va vous permettre
+
+6
+00:00:17,322 --> 00:00:19,102
+d'ouvrir des fenêtres à l’écran
+
+7
+00:00:19,103 --> 00:00:20,773
+et de faire des jolis dessins à l’intérieur !
+
+8
+00:00:20,870 --> 00:00:23,940
+Vous êtes sur les premiers pas de votre apprentissage
+
+9
+00:00:24,087 --> 00:00:28,087
+en programmation, on a résolument fait quelque chose de définitivement simple
+
+10
+00:00:28,087 --> 00:00:30,147
+pour pouvoir vous permettre très rapidement
+
+11
+00:00:30,147 --> 00:00:31,547
+d’accéder à des projets graphiques
+
+12
+00:00:31,547 --> 00:00:33,117
+et on l’espère des projets uniques !
+
+13
+00:00:33,117 --> 00:00:35,667
+Alors la MinilibX : Comment ça marche ?
+
+14
+00:00:36,342 --> 00:00:39,222
+Tout d'abord nous avons des man de la MinilibX
+
+15
+00:00:40,479 --> 00:00:42,869
+nous avons le premier man de la MinilibX,
+
+16
+00:00:44,257 --> 00:00:44,947
+il est la !
+
+17
+00:00:45,284 --> 00:00:47,654
+Il s’appelle mlx, et vous pouvez le retrouver
+
+18
+00:00:47,654 --> 00:00:50,834
+dans : `/usr/share/man/man3/mlx.1`
+
+19
+00:00:51,291 --> 00:00:53,291
+Alors il va vous faire toute une description
+
+20
+00:00:53,291 --> 00:00:54,851
+de ce qu'est la MinilibX
+
+21
+00:00:54,851 --> 00:00:56,891
+de comment est-ce qu'elle fonctionne,
+
+22
+00:00:56,891 --> 00:01:01,411
+il va également vous décrire l'include à mettre
+
+23
+00:01:01,517 --> 00:01:05,187
+dans votre programme.
+
+24
+00:01:05,187 --> 00:01:07,507
+il va également vous décrire, ce man,
+
+25
+00:01:07,507 --> 00:01:10,677
+quelle est la première fonction absolument indispensable
+
+26
+00:01:10,705 --> 00:01:13,625
+qui vous connecte au serveur graphique du Mac :
+
+27
+00:01:13,628 --> 00:01:15,648
+`mlx_init ();`
+
+28
+00:01:16,426 --> 00:01:18,986
+Le man est également un petit man
+
+29
+00:01:18,986 --> 00:01:20,756
+qui va vous servir d'introduction vers
+
+30
+00:01:20,756 --> 00:01:23,326
+les quatres autres man qui existent, qui sont
+
+31
+00:01:23,347 --> 00:01:25,017
+exactement au même endroit.
+
+32
+00:01:25,017 --> 00:01:27,407
+Un man qui va vous parler de la gestion des fenêtres
+
+33
+00:01:28,001 --> 00:01:30,481
+un autre qui va vous expliquez de quelle façon
+
+34
+00:01:30,481 --> 00:01:32,171
+vous allez pouvoir dessiner a l'intérieur
+
+35
+00:01:32,171 --> 00:01:33,551
+d'une fenêtre et enfin
+
+36
+00:01:33,551 --> 00:01:35,921
+un man pour la manipulation des images,
+
+37
+00:01:35,921 --> 00:01:38,431
+je vous laisserai découvrir ca, on ne fera pas de vidéo la dessus.
+
+38
+00:01:38,431 --> 00:01:41,941
+Et enfin un man sur la boucle d'événements
+
+39
+00:01:41,941 --> 00:01:44,341
+et sur les problématiques d'événements
+
+40
+00:01:44,341 --> 00:01:47,761
+et ce sera l'objet de la deuxième vidéo sur la MinilibX
+
+41
+00:01:47,761 --> 00:01:49,901
+Vous avez enfin à l'intérieur de ce premier man
+
+42
+00:01:49,901 --> 00:01:55,211
+sur la MLX de quelle façon vous allez pouvoir compiler votre MinilibX
+
+43
+00:01:55,211 --> 00:01:56,561
+sur MacOS.
+
+44
+00:01:59,103 --> 00:02:04,413
+Alors on va commencer par un petit projet, un petit programme
+
+45
+00:02:04,413 --> 00:02:05,603
+très simple.
+
+46
+00:02:09,563 --> 00:02:13,563
+Et on va tout simplement ouvrir une fenêtre !
+
+47
+00:02:15,063 --> 00:02:19,063
+Avec un include de &lt;mlx.h&gt; comme demander par le man,
+
+48
+00:02:19,063 --> 00:02:21,463
+une fonction main,
+
+49
+00:02:21,472 --> 00:02:24,192
+qui va faire quelque chose de très simple,
+
+50
+00:02:24,222 --> 00:02:27,132
+la premiere chose c'est appeler
+
+51
+00:02:27,132 --> 00:02:29,472
+`mlx_init();`
+
+52
+00:02:29,472 --> 00:02:33,472
+Vous avez peut être vu au niveau du man que mlx_init() renvoi un void*
+
+53
+00:02:33,638 --> 00:02:37,638
+c'est tout simplement l'identifiant de la connection au serveur graphique
+
+54
+00:02:38,407 --> 00:02:40,497
+Je vais l'appeler mlx_ptr
+
+55
+00:02:40,786 --> 00:02:46,866
+c'est donc un void*
+
+56
+00:02:46,966 --> 00:02:48,876
+et je vais faire ma deuxième manipulation
+
+57
+00:02:48,876 --> 00:02:52,436
+maintenant que la connection avec le serveur graphique est établie :
+
+58
+00:02:52,546 --> 00:02:55,436
+je vais ouvrir une fenêtre.
+
+59
+00:02:55,509 --> 00:02:59,509
+Ca va se faire grâce à mlx_new_window();
+
+60
+00:03:00,307 --> 00:03:07,287
+cette fonction, mlx_new_window();
+
+61
+00:03:07,287 --> 00:03:10,287
+vous avez son man qui va vous détaillé
+
+62
+00:03:10,287 --> 00:03:13,427
+les paramètres a utiliser
+
+63
+00:03:13,427 --> 00:03:17,427
+mlx_new_window() et ses consoeurs, que je ne détaillerai pas ici
+
+64
+00:03:17,427 --> 00:03:19,557
+va vous demandez
+
+65
+00:03:19,557 --> 00:03:23,337
+d'une part mlx_ptr, c'est à dire l'identifiant de la connection au serveur graphique
+
+66
+00:03:23,337 --> 00:03:25,687
+la taille x et y en pixels
+
+67
+00:03:25,687 --> 00:03:29,477
+pour la largeur et la hauteur de votre fenêtre
+
+68
+00:03:29,477 --> 00:03:32,097
+et enfin le titre de la fenêtre.
+
+69
+00:03:32,097 --> 00:03:34,627
+Vous remarquerez que on vous envoie un void*
+
+70
+00:03:34,627 --> 00:03:36,857
+c'est pour vous permettre d'avoir un identifiant
+
+71
+00:03:36,857 --> 00:03:38,367
+sur la fenêtre qui vient d'être crée, sachant
+
+72
+00:03:38,367 --> 00:03:41,607
+que vous pouvez avec la MinilibX, ouvrir plusieurs fenêtres
+
+73
+00:03:41,627 --> 00:03:44,477
+en meme temps, et donc il faut pouvoir les différencier !
+
+74
+00:03:45,087 --> 00:03:49,087
+Donc mlx_new_window() nous renvoie l'identifiant de la nouvelle fenêtre
+
+75
+00:03:53,477 --> 00:03:55,997
+On va donc récuperer cet identifiant qui est
+
+76
+00:03:55,997 --> 00:03:59,997
+susceptible d'être utiliser par la suite,
+
+77
+00:03:59,997 --> 00:04:02,977
+typiquement quand vous voudrez dessiner dans une fenêtre
+
+78
+00:04:02,977 --> 00:04:05,627
+vous aurez besoin de l'identifiant de la fenêtre évidemment.
+
+79
+00:04:05,627 --> 00:04:09,627
+Une fois que l'on a initialiser la connection et créer la fenêtre
+
+80
+00:04:09,627 --> 00:04:13,627
+on ne peut pas s'arrêter la, sinon le programme s'arrête, sort
+
+81
+00:04:13,627 --> 00:04:16,127
+et vous n'aurez rien du tout à l'écran..
+
+82
+00:04:16,127 --> 00:04:20,127
+On va appeler une dernière fonction qui est absolument indispensable
+
+83
+00:04:20,517 --> 00:04:22,397
+qui s'appelle mlx_loop();
+
+84
+00:04:22,554 --> 00:04:25,484
+cette fonction vous avez un man associé, je vous
+
+85
+00:04:25,484 --> 00:04:27,744
+laisse découvrir et jouer un petit peu
+
+86
+00:04:27,744 --> 00:04:29,654
+avec le contenu de ce man
+
+87
+00:04:29,654 --> 00:04:32,634
+cette fonction va tout simplement demander à MacOS
+
+88
+00:04:32,634 --> 00:04:35,154
+d'une part de dessiner ce que je lui avais demander de dessiner
+
+89
+00:04:35,154 --> 00:04:38,214
+c'est a dire en l'occurence ici, d'une part ouvrir la fênetre
+
+90
+00:04:38,332 --> 00:04:40,712
+et cette fonction va être aussi en charge
+
+91
+00:04:40,782 --> 00:04:43,202
+de gérer les événements
+
+92
+00:04:43,202 --> 00:04:46,152
+c'est a dire que lorsque dans votre fenêtre l'utilisateur
+
+93
+00:04:46,152 --> 00:04:49,222
+bouge la souris, clique avec la souris ou utilise le clavier
+
+94
+00:04:49,222 --> 00:04:51,802
+il faut que votre programme puisse récuperer
+
+95
+00:04:51,802 --> 00:04:54,432
+ces informations. Ca s'appelle des événements
+
+96
+00:04:54,488 --> 00:04:56,248
+et c'est mlx_loop() qui va être en charge
+
+97
+00:04:56,248 --> 00:04:57,578
+de gérer ces événements et de redonner la main
+
+98
+00:04:57,578 --> 00:05:01,948
+a votre propre programme lorsque ces événements surviennent
+
+99
+00:05:03,058 --> 00:05:04,968
+Ce sera l'objet de la vidéo suivante!
+
+100
+00:05:05,146 --> 00:05:08,196
+On va tacher de compiler le tout :
+
+101
+00:05:17,383 --> 00:05:21,383
+l'include de la mlx est dans `usr/local/include`,
+
+102
+00:05:23,493 --> 00:05:31,663
+main.c, dans `/usr/local/lib` on a la mlx en elle-même
+
+103
+00:05:33,113 --> 00:05:46,433
+et on rajoute le framework -OpenGL et le framework -Appkit
+
+104
+00:05:47,273 --> 00:05:51,273
+et la il me dit qu'il me manque des paramètres
+
+105
+00:05:51,455 --> 00:05:55,455
+pour ma fonction mlx_new_window(); tout à fait !
+
+106
+00:05:58,808 --> 00:06:03,939
+on avait donc indiqué le pointeur mlx_ptr,
+
+107
+00:06:03,949 --> 00:06:06,689
+qui est l'identifiant de la connection, la taille,
+
+108
+00:06:06,699 --> 00:06:10,669
+on va ouvrir une fenêtre qui va faire 500 pixels sur 500 pixels
+
+109
+00:06:11,359 --> 00:06:16,251
+et on va donner un titre à cette fenêtre !
+
+110
+00:06:16,251 --> 00:06:20,521
+On compile le tout, on execute, la fenêtre s'ouvre à l'écran !
+
+111
+00:06:22,106 --> 00:06:25,936
+Vous avez donc les premiers basics au niveau de la MinilibX
+
+112
+00:06:25,936 --> 00:06:27,836
+je vous laisse découvrir de quelle façon
+
+113
+00:06:27,836 --> 00:06:29,436
+maintenant vous allez pouvoir
+
+114
+00:06:29,436 --> 00:06:30,716
+dessiner à l'intérieur
+
+115
+00:06:30,716 --> 00:06:31,816
+de cette fenêtre
+
+116
+00:06:31,816 --> 00:06:32,946
+grace notamment
+
+117
+00:06:34,896 --> 00:06:40,426
+au man mlx_pixel_put.
+
+118
+00:06:42,453 --> 00:06:45,773
+mlx _pixel_put(); va utiliser l'identifiant de la connection,
+
+119
+00:06:45,872 --> 00:06:49,282
+l'identifiant de la fenêtre, les coordonnées du pixel et
+
+120
+00:06:49,322 --> 00:06:54,012
+enfin la couleur du pixel, qui est stockée sur un int en RGB
+
+121
+00:06:54,310 --> 00:06:58,310
+avec un octet pour le rouge, un pour le vert, un pour le bleu
+
+122
+00:06:59,576 --> 00:07:04,546
+Vous avez à la fois le man qui va vous expliquer
+
+123
+00:07:04,546 --> 00:07:08,166
+et vous presenter ça, mais je suis sur que vous pourrez trouver
+
+124
+00:07:08,166 --> 00:07:11,236
+de nombreux tutos sur la façon dont laquelle les couleurs
+
+125
+00:07:11,236 --> 00:07:15,236
+sont stockés dans la mémoire graphique de la machine !
+
+126
+00:07:15,272 --> 00:07:23,032
+Voila donc pour cette première introduction pour la vidéo de la MLX
+
+127
+00:07:23,032 --> 00:07:28,642
+et je vous invite pour la suite à regarder la vidéo qui va concernée les événements !
